@@ -774,18 +774,77 @@ body {
 /* Message List */
 .message-list {
     margin-top: 20px;
-}
-.message-item {
-    background: #fff5f8;
     padding: 10px;
-    margin: 10px auto;
+    max-width: 700px; /* Limits width for better readability */
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Individual Message */
+.message-item {
+    background: linear-gradient(135deg, #ffffff, #fdf2f8); /* Soft pink gradient */
+    padding: 15px;
+    margin: 12px auto;
     width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     text-align: left;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+/* Message Hover Effect */
+.message-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Message Text */
 .message-item p {
-    font-size: 1rem;
-    color: #555;
-    margin: 5px 0;
+    font-size: 1.1rem;
+    color: #6a419b;
+    font-weight: 500;
+    margin: 6px 0;
+    word-wrap: break-word;
 }
+
+/* Timestamp Styling */
+.message-timestamp {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+}
+
+/* Message Sender Styling */
+.message-sender {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #d65572;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .message-list {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .message-item {
+        padding: 12px;
+    }
+
+    .message-item p {
+        font-size: 1rem;
+    }
+
+    .message-timestamp {
+        font-size: 0.8rem;
+    }
+}
+
