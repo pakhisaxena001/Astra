@@ -1,25 +1,25 @@
-// Theme toggle functionality
+
 function setTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('theme', theme);
 }
 
-// Check for saved theme preference
+
 const savedTheme = localStorage.getItem('theme') || 'light';
 setTheme(savedTheme);
 
-// Theme toggle button functionality
+
 document.querySelector('.theme-toggle').addEventListener('click', () => {
   const currentTheme = document.documentElement.getAttribute('data-theme');
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
   setTheme(newTheme);
   
-  // Update icon
+
   const icon = document.querySelector('.theme-toggle i');
   icon.className = `lucide lucide-${newTheme === 'light' ? 'moon' : 'sun'}`;
 });
 
-// Smooth scrolling for anchor links
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -29,7 +29,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Form submission handling for Contact form
+
 document.getElementById('contact-form').addEventListener('submit', function(e) {
   e.preventDefault();
   // Add your form submission logic here
@@ -37,15 +37,15 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   this.reset();
 });
 
-// Newsletter form submission
+
 document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
   e.preventDefault();
-  // Add your newsletter subscription logic here
+
   alert('Thank you for subscribing to our newsletter!');
   this.reset();
 });
 
-// Intersection Observer for scroll animations
+
 const observerOptions = {
   threshold: 0.1
 };
@@ -58,12 +58,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all sections
+
 document.querySelectorAll('section').forEach(section => {
   observer.observe(section);
 });
 
-// Navbar scroll effect
+
 let lastScroll = 0;
 const navbar = document.querySelector('nav');
 
